@@ -30,46 +30,21 @@
             <a class="navbar-brand" href="#">Laravel 5.4 + Angular 1.6 Starter Template </a>
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Home</a>
+                    <a ui-sref="home" ui-sref-active="active">Home</a>
                 </li>
-                <li>
-                    <a href="#">Link</a>
+                 <li>
+                    <a ui-sref="todo-app" ui-sref-active="active">Todo App</a>
                 </li>
+              
             </ul>
         </div>
     </nav>
     <div class="container " id="content">
 
-        <h2>Todo</h2>
-        <div ng-controller="TodoListController as todoList">
-
-          <form ng-submit="todoList.addTodo()">
+      <h3> Basic Angular 1.x.x.x and Laravel Starter </h3>
 
 
-            <div class="form-group col-md-6">
-                <label class="sr-only" for="">Todo Name</label>
-                <input class="form-control" type="text" ng-model="todoList.todoText"  size="30"
-                placeholder="add new todo here">
-            </div>
-
-            
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-
-
-        </form>
-        <br/>
-        <span> @{{ todoList.remaining() }} of @{{ todoList.todos.length }} remaining</span>
-        [ <a href="" ng-click="todoList.archive()">archive</a> ]
-        <ul class="unstyled">
-            <li ng-repeat="todo in todoList.todos">
-              <label class="checkbox">
-                <input type="checkbox" ng-model="todo.done">
-                <span class="done-@{{todo.done}}"> @{{todo.text}}</span>
-            </label>
-        </li>
-    </ul>
+     <ui-view></ui-view>
 
     @can('manage-user-permissions')
 

@@ -24,6 +24,11 @@ require('bootstrap-sass');
 require('angular');
 require('angular-resource');
 
+/**
+ * Load the angular UI-Router component which will be handling the application's routing scheme
+ */
+require('angular-ui-router');
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
